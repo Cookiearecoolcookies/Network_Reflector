@@ -36,6 +36,7 @@ as recommend by the stackover flow post I just deleted it form the incoming pack
 
 Given that we now understand how the communication flow occurs and the code base is working, lets look at an example flow:
 
+```
 E.G:
 10.0.0.1 = Attacker
 10.0.0.3 = Victim
@@ -49,24 +50,33 @@ Ether / ARP who has 10.0.0.4 says 10.0.0.1
 Ether / ARP is at aa:11:86:99:88:8f says 10.0.0.4
 Ether / IP / ICMP 10.0.0.1 > 10.0.0.4 echo-reply 0 / Raw
 Ether / IP / ICMP 10.0.0.3 > 10.0.0.1 echo-reply 0 / Raw
+```
 
 From the above flow it can see that, we fist response to the attacker with the victims details, then when the attacker
 attacks we send it right back at them from the reflector and then pass their response back to them via the Victim.
 
 # References :
-Scapy.readthedocs.io. 2021. Calling Scapy Functions — Scapy 2.4.4. Documentation.
+* Scapy.readthedocs.io. 2021. Calling Scapy Functions — Scapy 2.4.4. Documentation.
 [online] Available at: <https://scapy.readthedocs.io/en/latest/functions.html>
 [Accessed 22 January 2021].
 
-stackoverflow, 2021. how-to-recalculate-ip-checksum-with-scapy.
+* stackoverflow, 2021. how-to-recalculate-ip-checksum-with-scapy.
 [online] Available at: <https://stackoverflow.com/questions/6112913/how-to-recalculate-ip-checksum-with-scapy>
 [Accessed 22 January 2021].
 
 # Useful links used in research but no direct reference.
-# https://www.youtube.com/watch?v=LvaII2PEwcQ&t=638s
-# https://www.youtube.com/watch?v=9ctJaieX5Ds
-# https://scapy.readthedocs.io/en/latest/api/scapy.layers.l2.html?highlight=ARP#scapy.layers.l2.ARP_am
-# https://scapy.readthedocs.io/en/latest/usage.html?highlight=sendp#sending-packets
-# https://scapy.readthedocs.io/en/latest/api/scapy.layers.l2.html?highlight=Ether#scapy.layers.l2.Ether
-# https://scapy.readthedocs.io/en/latest/usage.html#stacking-layers
-# https://en.wikipedia.org/wiki/Lists_of_network_protocols
+
+https://www.youtube.com/watch?v=LvaII2PEwcQ&t=638s
+
+https://www.youtube.com/watch?v=9ctJaieX5Ds
+
+https://scapy.readthedocs.io/en/latest/api/scapy.layers.l2.html?highlight=ARP#scapy.layers.l2.ARP_am
+
+https://scapy.readthedocs.io/en/latest/usage.html?highlight=sendp#sending-packets
+
+https://scapy.readthedocs.io/en/latest/api/scapy.layers.l2.html?highlight=Ether#scapy.layers.l2.Ether
+
+https://scapy.readthedocs.io/en/latest/usage.html#stacking-layers
+
+https://en.wikipedia.org/wiki/Lists_of_network_protocols
+
